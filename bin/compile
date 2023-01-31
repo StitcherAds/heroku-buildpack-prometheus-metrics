@@ -18,11 +18,17 @@ export_env_dir() {
 }
 
 echo "-----> Download statsd_exporter binary..."
-mkdir -p $BUILD_DIR/bin
+# create the bin directory
+# mkdir -p $BUILD_DIR/bin
+# download the binary
 wget "https://github.com/prometheus/statsd_exporter/releases/download/v0.23.0/statsd_exporter-0.23.0.linux-amd64.tar.gz"
+# extract the binary
 tar xvfz statsd_exporter-0.23.0.linux-amd64.tar.gz
-mv statsd_exporter-0.23.0.linux-amd64.tar.gz statsd-exporter
-mv statsd-exporter $BUILD_DIR/bin/statsd_exporter
-rm statsd_exporter-0.23.0.linux-amd64.tar.gz
+# rename the binary to statsd_exporter
+# mv statsd_exporter-0.23.0.linux-amd64.tar.gz statsd-exporter
+# move the binary to the bin directory
+# mv statsd-exporter $BUILD_DIR/bin/statsd_exporter
+# remove the tarball
+# rm statsd_exporter-0.23.0.linux-amd64.tar.gz
 
 echo "-----> statsd_exporter binary installed."
