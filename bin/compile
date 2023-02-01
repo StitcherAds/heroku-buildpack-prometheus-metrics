@@ -30,7 +30,6 @@ mv statsd_exporter-0.23.0.linux-amd64 statsd_exporter
 mv statsd_exporter $BUILD_DIR/bin/
 # remove the tarball
 rm statsd_exporter-0.23.0.linux-amd64.tar.gz
-
 echo "-----> statsd_exporter binary installed."
 
 echo "-----> Download prometheus binary..."
@@ -44,8 +43,9 @@ mv prometheus-2.37.5.linux-amd64 prometheus
 mv prometheus $BUILD_DIR/bin/
 # remove the tarball
 rm prometheus-2.37.5.linux-amd64.tar.gz
-
 echo "-----> prometheus binary installed."
+
+export_env_dir "$ENV_DIR"
 
 echo "-----> Copying configuration file"
 cp ./config/prometheus.yml $BUILD_DIR/bin/prometheus/
