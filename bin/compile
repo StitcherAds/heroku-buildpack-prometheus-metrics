@@ -46,3 +46,9 @@ mv prometheus $BUILD_DIR/bin/
 rm prometheus-2.37.5.linux-amd64.tar.gz
 
 echo "-----> prometheus binary installed."
+
+echo "-----> Copying configuration file"
+cp $BUILD_DIR/config/prometheus.yml $BUILD_DIR/bin/prometheus/prometheus.yml
+
+# Debugging
+cat $BUILD_DIR/bin/prometheus/prometheus.yml
