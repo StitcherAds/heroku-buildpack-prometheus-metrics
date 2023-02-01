@@ -32,3 +32,17 @@ mv statsd_exporter $BUILD_DIR/bin/
 rm statsd_exporter-0.23.0.linux-amd64.tar.gz
 
 echo "-----> statsd_exporter binary installed."
+
+echo "-----> Download prometheus binary..."
+# download the binary
+wget "https://github.com/prometheus/prometheus/releases/download/v2.37.5/prometheus-2.37.5.linux-amd64.tar.gz"
+# extract the binary
+tar xvfz prometheus-2.37.5.linux-amd64.tar.gz
+# rename the binary to prometheus
+mv prometheus-2.37.5.linux-amd64 prometheus
+# move the binary to the bin directory
+mv prometheus $BUILD_DIR/bin/
+# remove the tarball
+rm prometheus-2.37.5.linux-amd64.tar.gz
+
+echo "-----> prometheus binary installed."
