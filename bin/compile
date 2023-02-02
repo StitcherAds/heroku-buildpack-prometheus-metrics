@@ -50,8 +50,8 @@ export_env_dir "$ENV_DIR"
 
 # copy GRAFANA_CLOUD_USERNAME and GRAFANA_CLOUD_API_KEY to the config file
 echo "-----> Copying environment variables to config file"
-sed -i "s/GRAFANA_CLOUD_USERNAME/$GRAFANA_CLOUD_USERNAME/g" ./config/prometheus.yml
-sed -i "s/GRAFANA_CLOUD_API_KEY/$GRAFANA_CLOUD_API_KEY/g" ./config/prometheus.yml
+sed -i "s/\${GRAFANA_CLOUD_USERNAME}/$GRAFANA_CLOUD_USERNAME/g" ./config/prometheus.yml
+sed -i "s/\${GRAFANA_CLOUD_API_KEY}/$GRAFANA_CLOUD_API_KEY/g" ./config/prometheus.yml
 
 echo "-----> Copying configuration file"
 cp ./config/prometheus.yml $BUILD_DIR/bin/prometheus/

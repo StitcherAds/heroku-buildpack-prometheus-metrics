@@ -7,3 +7,7 @@ Build Pack for statsd exporter
 GRAFANA_CLOUD_USERNAME
 
 GRAFANA_CLOUD_API_KEY
+
+
+<!-- TODO -->
+- bash script for starting statsd exporter and prometheus
