@@ -6,4 +6,5 @@ cd bin/statsd_exporter
 ./statsd_exporter &
 
 cd ../prometheus
-./prometheus --config.file=prometheus.yml
+./prometheus --config.file=prometheus.yml &
+cd ~
