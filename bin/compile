@@ -63,5 +63,12 @@ sed -i "s/\${GRAFANA_CLOUD_URL}/$GRAFANA_CLOUD_URL/g" ./config/prometheus.yml
 echo "-----> Copying configuration file"
 cp ./config/prometheus.yml $BUILD_DIR/bin/prometheus/
 
+echo "-----> Run statsd_prometheus_buildpack.sh"
+mkdir -p "$BUILD_DIR/.profile.d"
+# copy the script to the .profile.d directory
+cp ./script/statsd_prometheus_buildpack.sh "$BUILD_DIR/.profile.d/statsd_prometheus_buildpack.sh"
+# make the script executable
+chmod +x "$BUILD_DIR/.profile.d/statsd_prometheus_buildpack.sh"
+
 # Debugging
 cat $BUILD_DIR/bin/prometheus/prometheus.yml
