@@ -53,12 +53,12 @@ echo "-----> Copying environment variables to config file"
 sed -i "s/\${GRAFANA_CLOUD_USERNAME}/$GRAFANA_CLOUD_USERNAME/g" ./config/prometheus.yml
 sed -i "s/\${GRAFANA_CLOUD_API_KEY}/$GRAFANA_CLOUD_API_KEY/g" ./config/prometheus.yml
 
+# copy GRAFANA_CLOUD_URL to the config file
+sed -i "s/\${GRAFANA_CLOUD_URL}/$GRAFANA_CLOUD_URL/g" ./config/prometheus.yml
 # copy GRAFANA_CLOUD_JOBNAME to the config file
 sed -i "s/\${GRAFANA_CLOUD_JOBNAME}/$GRAFANA_CLOUD_JOBNAME/g" ./config/prometheus.yml
 # copy GRAFANA_CLOUD_LABEL_HOSTNAME to the config file
 sed -i "s/\${GRAFANA_CLOUD_LABEL_HOSTNAME}/$GRAFANA_CLOUD_LABEL_HOSTNAME/g" ./config/prometheus.yml
-# copy GRAFANA_CLOUD_URL to the config file
-sed -i "s/\${GRAFANA_CLOUD_URL}/$GRAFANA_CLOUD_URL/g" ./config/prometheus.yml
 
 echo "-----> Copying configuration file"
 cp ./config/prometheus.yml $BUILD_DIR/bin/prometheus/

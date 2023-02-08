@@ -3,8 +3,8 @@
 # bash script to run the statsd_exporter and prometheus binaries
 # Path: script/run.sh
 cd bin/statsd_exporter
-./statsd_exporter &
+./statsd_exporter & disown $!
 
 cd ../prometheus
-./prometheus --config.file=prometheus.yml &
+./prometheus --config.file=prometheus.yml & disown $!
 cd ~
