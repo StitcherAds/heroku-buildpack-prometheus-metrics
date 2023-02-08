@@ -31,11 +31,11 @@ scrape_configs:
   - job_name: "${GRAFANA_CLOUD_JOBNAME}"
     static_configs:
       - targets: ["localhost:9102"]
-        labels: {"host": "${GRAFANA_CLOUD_LABEL_HOST}"}
+        labels: {"host": "odie"}
 
 # Send metrics into Grafana Cloud
 remote_write:
-  - url: "${GRAFANA_CLOUD_URL}"
+  - url: https://prometheus-prod-10-prod-us-central-0.grafana.net/api/prom/push
     basic_auth:
       username: ${GRAFANA_CLOUD_USERNAME}
       password: ${GRAFANA_CLOUD_API_KEY}
