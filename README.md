@@ -8,6 +8,7 @@ GRAFANA_CLOUD_USERNAME
 
 GRAFANA_CLOUD_API_KEY
 
+GRAFANA_CLOUD_JOBNAME
 
-<!-- TODO -->
+## Set statsd exporter version
 - bash script for starting statsd exporter and prometheus
