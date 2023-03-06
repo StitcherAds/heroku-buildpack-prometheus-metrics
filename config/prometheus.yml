@@ -36,6 +36,13 @@ scrape_configs:
 # Send metrics into Grafana Cloud
 remote_write:
   - url: https://prometheus-prod-10-prod-us-central-0.grafana.net/api/prom/push
+    write_relabel_configs:
+    - source_labels: [__name__]
+      regex: "^statsd_.*"
+      action: drop
+    - source_labels: [__name__]
+      regex: "^go_.*"
+      action: drop
     basic_auth:
       username: ${GRAFANA_CLOUD_USERNAME}
       password: ${GRAFANA_CLOUD_API_KEY}
