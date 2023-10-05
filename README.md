@@ -2,7 +2,7 @@
 
 Build Pack for prometheus metrics
 
-### Software Versions Used
+### Software Versions
 
 | **Software** | **Version** |
 |------|------|
